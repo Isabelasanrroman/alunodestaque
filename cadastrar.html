@@ -143,11 +143,34 @@
             </div>
 
             <p class="login">
-                Já possui uma conta? <a href="#">Entrar</a>
+                Já possui uma conta? <a href="entrar.html">Entrar</a>
             </p>
 
         </div>
     </div>
+
+<script>
+    function cadastrar() {
+        let nome = document.getElementById("nome").value;
+        let email = document.getElementById("email").value;
+        let senha = document.getElementById("senha").value;
+
+        if (nome === "" || email === "" || senha === "") {
+            alert("Preencha todos os campos!");
+            return;
+        }
+
+        let usuario = {
+            nome: nome,
+            email: email,
+            senha: senha
+        };
+
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+
+        window.location.href = "entrar.html";
+    }
+</script>
 
 </body>
 </html>
