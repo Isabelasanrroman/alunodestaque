@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Turmas</title>
+    <link rel="stylesheet" href="../css/cadastrarturmas.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="container">
+
+            <div class="logo">
+                <img src="https://www.precisaocortelaser.com.br/wp-content/uploads/2020/07/logo-senai-1.png">
+            </div>
+
+            <div class="card">
+                <h2>CADASTRAR TURMA</h2>
+
+                <div class="input">
+                    <span>Turma</span>
+                    <input type="text" id="turma">
+                </div>
+
+                <div class="upload">
+                    Envie o arquivo CSV:
+                    <input type="file" id="arquivo" accept=".csv">
+                </div>
+
+                <button onclick="enviarArquivo()">CADASTRAR</button>
+            </div>
+
+        </div>
+    </div>
+
+
+<script src="../java_script/cadastrarturmas.js"></script>
+
+</body>
+</html>
