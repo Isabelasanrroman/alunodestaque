@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Classificação</title>
-    <link rel="stylesheet" href="../static/css/classificacao.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/classificacao.css') }}">
 </head>
 
 <body>
@@ -15,14 +15,14 @@
         </div>
 
         <div class="curso">
-            <h2 id="titulo"></h2>
+            <h2>{{ turma }}</h2>
         </div>
 
-        <div class="sair">
-            <button onclick="window.location.href='index.html'">
+        <a href="{{ url_for('index') }}">
+            <button>
                 <img src="https://cdn-icons-png.flaticon.com/128/126/126467.png" alt="">
             </button>
-        </div>
+        </a>
 
         </div>
 
@@ -30,19 +30,28 @@
     </header>
 
 
-<table id="tabela">
-    <thead>
-        <tr>
-            <th>Aluno</th>
-            <th>Média</th>
-            <th>Frequência</th>
-            <th>Classificação</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th>Aluno</th>
+                <th>Média</th>
+                <th>Frequência</th>
+                <th>Classificação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in alunos %}
+            <tr>
+                <td>{{ a.nome }}</td>
+                <td>{{ a.media }}</td>
+                <td>{{ a.freq }}</td>
+                <td>{{ a.classificacao }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-<script src="../static/java_script/classificacao.js"></script>
 
 </body>
+
 </html>

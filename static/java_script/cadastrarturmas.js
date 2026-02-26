@@ -1,22 +1,9 @@
-async function enviarArquivo() {
 
-    let nome = document.getElementById("turma").value;
-    let arquivo = document.getElementById("arquivo").files[0];
+    const inputArquivo = document.getElementById("arquivo");
+    const nomeArquivo = document.getElementById("nomeArquivo");
 
-    let form = new FormData();
-
-    form.append("nome", nome);
-    form.append("arquivo", arquivo);
-
-    await fetch("/api/criar_turma", {
-
-        method: "POST",
-
-        body: form
-
+    inputArquivo.addEventListener("change", function() {
+        if (inputArquivo.files.length > 0) {
+            nomeArquivo.textContent = "Arquivo selecionado: " + inputArquivo.files[0].name;
+        }
     });
-
-    alert("Turma criada");
-
-    window.location.href = "classificacao.html";
-}

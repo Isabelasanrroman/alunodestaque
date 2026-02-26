@@ -13,38 +13,42 @@
         <div class="container">
 
             <div class="logo">
-                <img src="https://www.precisaocortelaser.com.br/wp-content/uploads/2020/07/logo-senai-1.png" alt="Logo SENAI">
+                <img src="https://www.precisaocortelaser.com.br/wp-content/uploads/2020/07/logo-senai-1.png"
+                    alt="Logo SENAI">
             </div>
 
             <div class="card">
                 <h2>CADASTRE-SE</h2>
 
-                <div class="input">
-                    <span>Nome</span>
-                    <input type="text" id="nome">
-                </div>
+                <form method="POST" action="{{ url_for('cadastrar') }}">
 
-                <div class="input">
-                    <span>Email</span>
-                    <input type="email" id="email">
-                </div>
+                    <div class="input">
+                        <span>Nome</span>
+                        <input type="text" name="nome">
+                    </div>
 
-                <div class="input">
-                    <span>Senha</span>
-                    <input type="password" id="senha">
-                </div>
+                    <div class="input">
+                        <span>Email</span>
+                        <input type="email" name="email">
+                    </div>
 
-                <button onclick="cadastrar()">CADASTRAR</button>
+                    <div class="input">
+                        <span>Senha</span>
+                        <input type="password" name="senha">
+                    </div>
+
+                    <button type="submit">CADASTRAR</button>
+
+                </form>
+
+                <p class="login">
+                    Já possui uma conta? <a href="{{ url_for('entrar') }}">Entrar</a>
+                </p>
+
             </div>
-
-            <p class="login">
-                Já possui uma conta? <a href="{{ url_for('entrar') }}">Entrar</a>
-            </p>
-
         </div>
-    </div>
 
-    <script src="{{ url_for('static', filename='java_script/cadastrar.js') }}"></script>
 
 </body>
+
 </html>

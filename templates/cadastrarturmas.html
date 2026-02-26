@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Turmas</title>
-    <link rel="stylesheet" href="../static/css/cadastrarturmas.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrarturmas.css') }}">
 </head>
 
 <body>
@@ -19,24 +19,27 @@
             <div class="card">
                 <h2>CADASTRAR TURMA</h2>
 
-                <div class="input">
-                    <span>Turma</span>
-                    <input type="text" id="turma">
-                </div>
+                <form method="POST" action="{{ url_for('cadastrar_turmas') }}" enctype="multipart/form-data">
 
-                <div class="upload">
-                    Envie o arquivo CSV:
-                    <input type="file" id="arquivo" accept=".csv">
-                </div>
+                    <div class="input">
+                        <span>Turma</span>
+                        <input type="text" name="turma" required>
+                    </div>
 
-                <button onclick="enviarArquivo()">CADASTRAR</button>
+                    <div class="upload">
+                        Envie o arquivo CSV:
+                        <input type="file" name="arquivo" id="arquivo" accept=".csv" required>
+                        <p id="nomeArquivo"></p>
+                    </div>
+
+                    <button type="submit">CADASTRAR</button>
+
+                </form>
+
             </div>
 
         </div>
     </div>
-
-
-<script src="../static/java_script/cadastrarturmas.js"></script>
 
 </body>
 </html>
